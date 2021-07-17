@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 from .models import Task
 
@@ -28,7 +29,6 @@ class TaskList(LoginRequiredMixin, ListView):
 
         return context
     
-
 class TaskDetail(LoginRequiredMixin, DetailView):
 
     model = Task
@@ -58,3 +58,12 @@ class TaskDelete(LoginRequiredMixin, DeleteView):
     model = Task
     context_object_name = 'task'
     success_url = reverse_lazy('tasks')
+
+@login_required
+def task_change_status(request, pk):
+    
+    task = Task.objects.get(pk=pk)
+    task.is_completed = not task.is_completed # assign opposite boolean value
+    task.save()
+
+    return redirect('tasks')

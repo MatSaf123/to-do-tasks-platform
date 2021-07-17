@@ -29,17 +29,26 @@
             {% if task.is_completed %}
             <div class="task-title">
                 <div class="task-complete-icon"></div>
-                <i><s><a href="{% url 'task-update' task.id %}">{{task}}</a></s></i>
+                <i><s><a href="{% url 'task-change-status' task.id %}">{{task}}</a></s></i>
             </div>
-            <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215</a>
+
+            <div class="task-title-buttons-pair">
+                <a class="update-link" href="{% url 'task-update' task.id %}">Edit</a>
+                <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215</a>
+            </div>
 
             {% else %}
             
             <div class="task-title">
                 <div class="task-incomplete-icon"></div>
-                <i><a href="{% url 'task-update' task.id %}">{{task}}</a></i>
+                <i><a href="{% url 'task-change-status' task.id %}">{{task}}</a></i>
             </div>
-            <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215</a>
+
+            <div class="task-title-buttons-pair">
+                <a class="update-link" href="{% url 'task-update' task.id %}">Edit</a>
+                <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215</a>
+            </div>
+
             {% endif %}
         </div>
     {% empty %}
