@@ -7,7 +7,7 @@
 
 
 <p align="center">    
-    <img src="media/readme/demo.gif" width="100%" height="60%">
+    <img src="static/readme/demo.gif" width="100%" height="60%">
 </p>
 
 #
