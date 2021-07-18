@@ -30,7 +30,7 @@
             {% if task.is_completed %}
             <div class="task-title">
                 <div class="task-complete-icon"></div>
-                <i><s><a href="{% url 'task-change-status' task.id %}">{{task}}</a></s></i>
+                <i><s><a href="{% url 'task-change-status' task.id %}" title="{{task.description}}">{{task}}</a></s></i>
             </div>
 
             <div class="task-title-buttons-pair">
@@ -42,7 +42,7 @@
             
             <div class="task-title">
                 <div class="task-incomplete-icon"></div>
-                <i><a href="{% url 'task-change-status' task.id %}">{{task}}</a></i>
+                <i><a href="{% url 'task-change-status' task.id %}" title="{{task.description}}">{{task}}</a></i>
             </div>
 
             <div class="task-title-buttons-pair">
