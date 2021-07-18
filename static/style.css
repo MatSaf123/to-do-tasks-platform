@@ -18,12 +18,13 @@ a, p {
 
 .task-title {
     display: flex;
+    padding: 20px;
 }
 
 .task-title a {
     text-decoration: none;
     color: darkslategray;
-    overflow: hidden;
+    margin-left: 10px;
 }
 
 .header-bar {
@@ -33,7 +34,6 @@ a, p {
     padding: 10px;
     border-radius: 5px 5px 0 0;
     background: linear-gradient(90deg, #334257 30%, #476072 80%, #476072 100%);
-
 }
 
 .header-bar a {
@@ -48,6 +48,11 @@ a, p {
     padding: 20px;
     background-color: #fff;
     border-top: 1px solid rgb(226, 226, 226);
+}
+
+.task-wrapper a {
+    word-break: break-all;
+    padding: 10;
 }
 
 .task-complete-icon {
@@ -83,7 +88,6 @@ a, p {
 
 .search-bar {
     display: flex;
-    margin-top: 20px;
 }
 
 .search-add-wrapper {

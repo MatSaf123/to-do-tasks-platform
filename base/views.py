@@ -67,3 +67,8 @@ def task_change_status(request, pk):
     task.save()
 
     return redirect('tasks')
+
+@login_required
+def tasks_delete_all_completed(request):
+    Task.objects.filter(is_completed = True).delete()
+    return redirect('tasks')

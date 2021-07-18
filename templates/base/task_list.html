@@ -20,7 +20,8 @@
         <input type="text" name="search-area" value="{{search_input}}">
         <input type="submit" value="Search">
     </form>
-    <a href="{% url 'task-create' %}">Add New Task</a>
+        <a href="{% url 'tasks-delete-all-completed' %}">Delete all completed &#128465</a>
+        <a href="{% url 'task-create' %}">Add New Task</a>
 </div>
 
 <div class="task-items-wrapper">
